@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", () =>{
-   getHeroes(10)
-    // getHeroesp(20)
+   getHeroes(15)
+    getHeroesp(3)
 });
 
+const urlAPI = 'https://gateway.marvel.com/v1/public/characters?ts=1&apikey=1e4f4e96c273cfae3a27fb936b6a1a5f&hash=bbc5a1123f3bd1ce184d8f1a9691e6e7&limit=3'
 /* ----DATOS API ver https://developer.marvel.com/docs
 const ts = 1;
 const pubKey = '1e4f4e96c273cfae3a27fb936b6a1a5f';
@@ -24,16 +25,16 @@ async function fetchMarvelAPI(url){
 }
 
 
-
-// const getHeroesp = async (limit) =>{
-//     for (let i = 0; i < limit; i++) {
-//         await fetch(urlAPI)
-//             .then((response) => response.json())
-//             .then(data => console.log(data));
-//     }
-// }
+/*
+const getHeroesp = async (limit) =>{
+    for (let i = 0; i < limit; i++) {
+        await fetch(urlAPI)
+            .then((response) => response.json())
+            .then(data => console.log(data));
+    }
+}
 const getHeroes = async (limit) =>{
-        await fetch(`https://gateway.marvel.com:443/v1/public/characters?limit=${limit}&apikey=1e4f4e96c273cfae3a27fb936b6a1a5f`)
+        await fetch(`https://gateway.marvel.com/v1/public/characters?ts=1&apikey=1e4f4e96c273cfae3a27fb936b6a1a5f&hash=bbc5a1123f3bd1ce184d8f1a9691e6e7&limit=${limit}`)
             .then((response) => response.json())
             .then(data => {
                for (const hero of data.data.results){
@@ -54,4 +55,4 @@ const getHeroes = async (limit) =>{
                }
                flex.innerHTML = contentHTML
             });
-}
+}*/
