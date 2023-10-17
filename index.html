@@ -11,21 +11,23 @@
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <link rel="stylesheet" href="./css/estilos.css">
 </head>
 <body>
+
 <div class="container">
     <nav>
         <div class="container-navvar">
-            <ul class="link-container">
+            <ul class="link-container" id="link-container">
                 <li><i class='bx bx-home-smile' ></i>Home</li>
                 <li><i class='bx bxl-heroku'></i>Personajes</li>
-                <li><i class='bx bx-book-reader'></i>Comics</li>
-                <li><i class='bx bx-tv'></i>Series</li>
+                <li id="comics" class="comics"><i class='bx bx-book-reader'></i>Comics</li>
+                <li id="series" class="series"><i class='bx bx-tv'></i>Series</li>
             </ul>
 
-            <div class="link-container-user-menu">
+            <div class="link-container-user-menu" id="openModal">
                 <a href="#" class="user-menu-tab sign"><i class='bx bx-door-open'></i>Sesión</a>
                 <span class="user-menu-tab separator"> | </span>
                 <a class="user-menu-tab" id="user-join"><i class='bx bxs-edit-location'></i>Registrate</a>
@@ -56,30 +58,25 @@
             a mas contenido.
         </p>
 
-        <form>
+        <form id="form">
             <div class="group-input">
                 <div class="input-field">
                     <label for="input-email"></label>
-                    <input type="email" id="input-email" name="input-email" required placeholder="Email">
+                    <input type="email" id="input-email" name="input-email" placeholder="Email" required>
                 </div>
                 <div class="input-field" id="name-field">
-                    <label for="input-name"></label>
-                    <input type="password" id="input-name" name="input-name" required placeholder="Password">
+                    <label for="input-pass"></label>
+                    <input type="password" id="input-pass" name="input-pass" placeholder="Password" required>
                 </div>
                 <div class="input-field" id="nombres">
                     <label for="input-nombres"></label>
-                    <input type="password" id="input-nombres" name="input-name" required placeholder="Nombres">
-                </div>
-
-                <div class="input-field" id="contrasenia">
-                    <label for="input-pass"></label>
-                    <input type="password" id="input-pass" name="input-pass" required placeholder="contrasenia">
+                    <input type="text" id="input-nombres" name="input-nombres" placeholder="Nombres" required>
                 </div>
             </div>
 
             <div class="button-field">
                 <button type="button" id="btn-signin">Ingresa</button>
-                <button type="button" id="btn-signup" class="disable">Registrate</button>
+                <button type="submit" id="btn-signup" class="disable">Registrate</button>
             </div>
             <div class="footer-logos">
                 <img src="images/disney-logo.png">
@@ -126,19 +123,19 @@
 
             <nav class="primary-links">
                 <ul>
-                    <li>ACERCA DE MARVEL</li>
-                    <li>HELP/FAQS</li>
-                    <li>JOBS</li>
-                    <li>PRÁCTICAS</li>
+                    <li><a href="https://www.marvel.com/corporate/about" class="user-menu-tab sign" target="_blank">ACERCA DE MARVEL</a></li>
+                    <li><a href="https://help.marvel.com/hc/en-us" class="user-menu-tab sign" target="_blank" >HELP/FAQS</a></li>
+                    <li><a href="https://jobs.disneycareers.com/search-jobs?orgIds=391-1635-24091&ascf=[{%22key%22:%22custom_fields%252EIndustryCustomField%22,%22value%22:%22Marvel%20Entertainment%22}]" class="user-menu-tab sign">JOBS</a></li>
+                    <li><a href="https://www.marvel.com/corporate/interns" class="user-menu-tab sign" target="_blank">PRÁCTICAS </a></li>
                 </ul>
             </nav>
 
             <nav class="secundary-links">
                 <ul>
-                    <li>PUBLICIDAD</li>
-                    <li>DISNEY+</li>
-                    <li>MARVELHQ.COM</li>
-                    <li>REDIMIR</li>
+                    <li><a href="https://www.marvel.com/corporate/advertising" class="user-menu-tab sign" target="_blank">PUBLICIDAD</a></li>
+                    <li><a href="https://www.disneyplus.com/brand/marvel?cid=DTCI-Synergy-Marvel-Site-Acquisition-Library-US-Marvel-NA-EN-NavFooter-Marvel_DisneyPlus_NavFooter_Evergreen-NA" class="user-menu-tab sign" target="_blank"DISNEY+></a> </li>
+                    <li><a href="https://www.marvelhq.com/" class="user-menu-tab sign" target="_blank">MARVELHQ.COM</a></li>
+                    <li><a href="https://www.marvel.com/signin?referer=http%3A%2F%2Fwww.marvel.com%2Fredeem" class="user-menu-tab sign" target="_blank">REDIMIR</a></li>
                 </ul>
             </nav>
         </div>
@@ -146,15 +143,18 @@
 
             <div class="footer__promotion">
                 <div class="figures-img">
-                    <figure class="img__wrapper">
-                        <img src="https://cdn.marvel.com/content/1x/marvel_insider-topnav-logo-large2x.png"
-                             alt="Marvel Insider Logo" class="main-footer__promotion-image">
-                    </figure>
-
-                    <figure class="img__wrapper">
-                        <img src="https://cdn.marvel.com/content/1x/mu-logo-w-nav-2x-2021-02.png"
-                             alt="Marvel Unlimited Logo" class="main-footer__promotion-image">
-                    </figure>
+                    <a href="https://www.marvel.com/insider?cid=Dcom_navigation_20200929_insider_footer" class="user-menu-tab sign" target="_blank">
+                        <figure class="img__wrapper">
+                            <img src="https://cdn.marvel.com/content/1x/marvel_insider-topnav-logo-large2x.png"
+                                 alt="Marvel Insider Logo" class="main-footer__promotion-image">
+                        </figure>
+                    </a>
+                    <a href="https://www.marvel.com/unlimited?cid=dcom_navigation_20220712_unlimited_footer" class="user-menu-tab sign" target="_blank">
+                        <figure class="img__wrapper">
+                            <img src="https://cdn.marvel.com/content/1x/mu-logo-w-nav-2x-2021-02.png"
+                                 alt="Marvel Unlimited Logo" class="main-footer__promotion-image">
+                        </figure>
+                    </a>
                 </div>
 
             <div class="footer-promotion-text">
@@ -181,5 +181,6 @@
 
 
 <script src="js/app.js"></script>
+
 </body>
 </html>

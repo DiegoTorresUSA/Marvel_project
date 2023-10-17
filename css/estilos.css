@@ -130,6 +130,18 @@ li{
     pointer-events: none;
 }
 
+.opacity{
+    opacity: 1;
+}
+
+.comics {
+    opacity: 0;
+}
+
+.series {
+    opacity: 0;
+}
+
 #modal::backdrop{
     background-color: rgba(0,0,0,.65);
 }
@@ -137,7 +149,6 @@ li{
     opacity: 1;
     pointer-events: unset;
     transition: all 300ms ease-in-out;
-
 }
 .modal--close{
     opacity: 0;
@@ -309,6 +320,16 @@ form input:focus{
 .button-field button.disable{
     background: #eaeaea;
     color: #555;
+}
+
+.input-field.error input{
+    border-color: #E62429;
+}
+
+.input-field .error{
+    color: #E62429;
+    font-size: 8px;
+    height: 10px;
 }
 
 .footer-logos{
